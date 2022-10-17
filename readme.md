@@ -1,7 +1,7 @@
 ## Guide for contribution
 - git clone
 
-hello guys!
+
 ## How to start with GoLang
 - Introduction
 C syntax
@@ -19,6 +19,15 @@ state that p is a pointer to int because ‘*p’ has type int, and that a is an
 What about functions?
 
 In c, we can divide a large program into the basic building blocks known as function. The function contains the set of programming statements enclosed by {}. A function can be called multiple times to provide reusability and modularity to the C program. In other words, we can say that the collection of functions creates a program. The function is also known as procedureor subroutinein other programming languages.
+
+Advantage of functions in C
+There are the following advantages of C functions.
+
+By using functions, we can avoid rewriting same logic/code again and again in a program.
+We can call C functions any number of times in a program and from any place in a program.
+We can track a large C program easily when it is divided into multiple functions.
+Reusability is the main achievement of C functions.
+However, Function calling is always a overhead in a C program.
 
 Originally, C’s function declarations wrote the types of the arguments outside the parens, like this:
 

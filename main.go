@@ -5,6 +5,7 @@ import (
 	"./routes"
 	"net/http"
 	"fmt"
+	"io"
 	"github.com/gofiber/fiber"
 	"github.com/gofiber/fiber/middleware/cors"
 )
@@ -18,6 +19,10 @@ func main() {
 		AllowCredentials: true,
 	}))
 
+	mux := http.NewServeMux()
+ 
+    mux.HandleFunc("/welcome", welcome)
+    http.ListenAndServe(":5050", mux)
 	routes.Setup(app)
 	http.HandleFunc("/",googleDef)
 	app.Listen(":8000")

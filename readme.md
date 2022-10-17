@@ -1,7 +1,7 @@
 ## Guide for contribution
 - git clone
-
-
+- git commit -m"fdgjlk"
+- harshit srivastava
 ## How to start with GoLang
 - Introduction
 C syntax

@@ -212,6 +212,55 @@ GODEBUG=http2debug=1   # enable verbose HTTP/2 debug logs
 GODEBUG=http2debug=2   # ... even more verbose, with frame dumps
 
 
+Add a fuzz test
+The unit test has limitations, namely that each input must be added to the test by the developer. One benefit of fuzzing is that it comes up with inputs for your code, and may identify edge cases that the test cases you came up with didn’t reach.
+
+func FuzzReverse(f *testing.F) {
+    testcases := []string{"Hello, world", " ", "!12345"}
+    for _, tc := range testcases {
+        f.Add(tc)  // Use f.Add to provide a seed corpus
+    }
+    f.Fuzz(func(t *testing.T, orig string) {
+        rev := Reverse(orig)
+        doubleRev := Reverse(rev)
+        if orig != doubleRev {
+            t.Errorf("Before: %q, after: %q", orig, doubleRev)
+        }
+        if utf8.ValidString(orig) && !utf8.ValidString(rev) {
+            t.Errorf("Reverse produced invalid UTF-8 string %q", rev)
+        }
+    })
+}
+Fuzzing has a few limitations as well. In your unit test, you could predict the expected output of the Reverse function, and verify that the actual output met those expectations.
+There are a few different ways you could debug this error. If you are using VS Code as your text editor, you can set up your debugger to investigate.
+
+In this tutorial, we will log useful debugging info to your terminal.
+
+First, consider the docs for utf8.ValidString.
+
+ValidString reports whether s consists entirely of valid UTF-8-encoded runes.
+The current Reverse function reverses the string byte-by-byte, and therein lies our problem. In order to preserve the UTF-8-encoded runes of the original string, we must instead reverse the string rune-by-rune.
+
+To examine why the input (in this case, the Chinese character 泃) is causing Reverse to produce an invalid string when reversed, you can inspect the number of runes in the reversed string.
+
+Like before, there are several ways you could debug this failure. In this case, using a debugger would be a great approach.
+
+we will log useful debugging info in the Reverse function.
+
+Look closely at the reversed string to spot the error. In Go, a string is a read only slice of bytes, and can contain bytes that aren’t valid UTF-8. The original string is a byte slice with one byte, '\x91'. When the input string is set to []rune, Go encodes the byte slice to UTF-8, and replaces the byte with the UTF-8 character �. When we compare the replacement UTF-8 character to the input byte slice, they are clearly not equal.
+
+f.Fuzz(func(t *testing.T, orig string) {
+    rev := Reverse(orig)
+    doubleRev := Reverse(rev)
+    t.Logf("Number of runes: orig=%d, rev=%d, doubleRev=%d", utf8.RuneCountInString(orig), utf8.RuneCountInString(rev), utf8.RuneCountInString(doubleRev))
+    if orig != doubleRev {
+        t.Errorf("Before: %q, after: %q", orig, doubleRev)
+    }
+    if utf8.ValidString(orig) && !utf8.ValidString(rev) {
+        t.Errorf("Reverse produced invalid UTF-8 string %q", rev)
+    }
+})
+=======
 ## further general information
 Godoc extracts and generates documentation for Go programs.
 

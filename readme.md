@@ -11,6 +11,7 @@ int x;
 declares x to be an int: the expression ‘x’ will have type int. In general, to figure out how to write the type of a new variable, write an expression involving that variable that evaluates to a basic type, then put the basic type on the left and the expression on the right.
 
 Thus, the declarations
+The pointer in C language is a variable which stores the address of another variable. This variable can be of type int, char, array, function, or any other pointer. The size of the pointer depends on the architecture. However, in 32-bit architecture the size of a pointer is 2 byte.
 
 int *p;
 int a[3];
@@ -20,6 +21,18 @@ State that p is a pointer to int because ‘*p’ has type int, and that a is an
 
 What about functions?
 In C, we can divide a large program into the basic building blocks known as function. The function contains the set of programming statements enclosed by {}. A function can be called multiple times to provide reusability and modularity to the C program. In other words, we can say that the collection of functions creates a program. The function is also known as procedureor subroutinein other programming languages.
+
+In c, we can divide a large program into the basic building blocks known as function. The function contains the set of programming statements enclosed by {}. A function can be called multiple times to provide reusability and modularity to the C program. In other words, we can say that the collection of functions creates a program. The function is also known as procedureor subroutinein other programming languages.
+
+Advantage of functions in C
+There are the following advantages of C functions.
+
+By using functions, we can avoid rewriting same logic/code again and again in a program.
+We can call C functions any number of times in a program and from any place in a program.
+We can track a large C program easily when it is divided into multiple functions.
+Reusability is the main achievement of C functions.
+However, Function calling is always a overhead in a C program.
+
 Originally, C’s function declarations wrote the types of the arguments outside the parens, like this:
 
 int main(argc, argv)
@@ -200,3 +213,131 @@ GODEBUG=http2client=0  # disable HTTP/2 client support
 GODEBUG=http2server=0  # disable HTTP/2 server support
 GODEBUG=http2debug=1   # enable verbose HTTP/2 debug logs
 GODEBUG=http2debug=2   # ... even more verbose, with frame dumps
+
+
+Add a fuzz test
+The unit test has limitations, namely that each input must be added to the test by the developer. One benefit of fuzzing is that it comes up with inputs for your code, and may identify edge cases that the test cases you came up with didn’t reach.
+
+func FuzzReverse(f *testing.F) {
+    testcases := []string{"Hello, world", " ", "!12345"}
+    for _, tc := range testcases {
+        f.Add(tc)  // Use f.Add to provide a seed corpus
+    }
+    f.Fuzz(func(t *testing.T, orig string) {
+        rev := Reverse(orig)
+        doubleRev := Reverse(rev)
+        if orig != doubleRev {
+            t.Errorf("Before: %q, after: %q", orig, doubleRev)
+        }
+        if utf8.ValidString(orig) && !utf8.ValidString(rev) {
+            t.Errorf("Reverse produced invalid UTF-8 string %q", rev)
+        }
+    })
+}
+Fuzzing has a few limitations as well. In your unit test, you could predict the expected output of the Reverse function, and verify that the actual output met those expectations.
+There are a few different ways you could debug this error. If you are using VS Code as your text editor, you can set up your debugger to investigate.
+
+In this tutorial, we will log useful debugging info to your terminal.
+
+First, consider the docs for utf8.ValidString.
+
+ValidString reports whether s consists entirely of valid UTF-8-encoded runes.
+The current Reverse function reverses the string byte-by-byte, and therein lies our problem. In order to preserve the UTF-8-encoded runes of the original string, we must instead reverse the string rune-by-rune.
+
+To examine why the input (in this case, the Chinese character 泃) is causing Reverse to produce an invalid string when reversed, you can inspect the number of runes in the reversed string.
+
+Like before, there are several ways you could debug this failure. In this case, using a debugger would be a great approach.
+
+we will log useful debugging info in the Reverse function.
+
+Look closely at the reversed string to spot the error. In Go, a string is a read only slice of bytes, and can contain bytes that aren’t valid UTF-8. The original string is a byte slice with one byte, '\x91'. When the input string is set to []rune, Go encodes the byte slice to UTF-8, and replaces the byte with the UTF-8 character �. When we compare the replacement UTF-8 character to the input byte slice, they are clearly not equal.
+
+f.Fuzz(func(t *testing.T, orig string) {
+    rev := Reverse(orig)
+    doubleRev := Reverse(rev)
+    t.Logf("Number of runes: orig=%d, rev=%d, doubleRev=%d", utf8.RuneCountInString(orig), utf8.RuneCountInString(rev), utf8.RuneCountInString(doubleRev))
+    if orig != doubleRev {
+        t.Errorf("Before: %q, after: %q", orig, doubleRev)
+    }
+    if utf8.ValidString(orig) && !utf8.ValidString(rev) {
+        t.Errorf("Reverse produced invalid UTF-8 string %q", rev)
+    }
+})
+=======
+## further general information
+Godoc extracts and generates documentation for Go programs.
+
+It runs as a web server and presents the documentation as a web page.
+
+godoc -http=:6060
+Usage:
+
+godoc [flag]
+The flags are:
+
+-v
+	verbose mode
+-timestamps=true
+	show timestamps with directory listings
+-index
+	enable identifier and full text search index
+	(no search box is shown if -index is not set)
+-index_files=""
+	glob pattern specifying index files; if not empty,
+	the index is read from these files in sorted order
+-index_throttle=0.75
+	index throttle value; a value of 0 means no time is allocated
+	to the indexer (the indexer will never finish), a value of 1.0
+	means that index creation is running at full throttle (other
+	goroutines may get no time while the index is built)
+-index_interval=0
+	interval of indexing; a value of 0 sets it to 5 minutes, a
+	negative value indexes only once at startup
+-play=false
+	enable playground
+-links=true
+	link identifiers to their declarations
+-write_index=false
+	write index to a file; the file name must be specified with
+	-index_files
+-maxresults=10000
+	maximum number of full text search results shown
+	(no full text index is built if maxresults <= 0)
+-notes="BUG"
+	regular expression matching note markers to show
+	(e.g., "BUG|TODO", ".*")
+-goroot=$GOROOT
+	Go root directory
+-http=addr
+	HTTP service address (e.g., '127.0.0.1:6060' or just ':6060')
+-templates=""
+	directory containing alternate template files; if set,
+	the directory may provide alternative template files
+	for the files in $GOROOT/lib/godoc
+-url=path
+	print to standard output the data that would be served by
+	an HTTP request for path
+-zip=""
+	zip file providing the file system to serve; disabled if empty
+By default, godoc looks at the packages it finds via $GOROOT and $GOPATH (if set). This behavior can be altered by providing an alternative $GOROOT with the -goroot flag.
+
+When the -index flag is set, a search index is maintained. The index is created at startup.
+
+The index contains both identifier and full text search information (searchable via regular expressions). The maximum number of full text search results shown can be set with the -maxresults flag; if set to 0, no full text results are shown, and only an identifier index but no full text search index is created.
+
+By default, godoc uses the system's GOOS/GOARCH. You can provide the URL parameters "GOOS" and "GOARCH" to set the output on the web page for the target system.
+
+The presentation mode of web pages served by godoc can be controlled with the "m" URL parameter; it accepts a comma-separated list of flag names as value:
+
+all	show documentation for all declarations, not just the exported ones
+methods	show all embedded methods, not just those of unexported anonymous fields
+src	show the original source code rather than the extracted documentation
+flat	present flat (not indented) directory listings using full paths
+For instance, https://golang.org/pkg/math/big/?m=all shows the documentation for all (not just the exported) declarations of package big.
+
+By default, godoc serves files from the file system of the underlying OS. Instead, a .zip file may be provided via the -zip flag, which contains the file system to serve. The file paths stored in the .zip file must use slash ('/') as path separator; and they must be unrooted. $GOROOT (or -goroot) must be set to the .zip file directory path containing the Go root directory. For instance, for a .zip file created by the command:
+
+zip -r go.zip $HOME/go
+one may run godoc as follows:
+
+godoc -http=:6060 -zip=go.zip -goroot=$HOME/go

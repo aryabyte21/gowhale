@@ -341,3 +341,20 @@ zip -r go.zip $HOME/go
 one may run godoc as follows:
 
 godoc -http=:6060 -zip=go.zip -goroot=$HOME/go
+
+
+
+First line of code in go (try it yourselve!)
+
+
+// Click here and start typing.
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, 世界")
+}
+
+this programme will print Hello
+congrats! you have written your first Go programme

@@ -341,3 +341,28 @@ zip -r go.zip $HOME/go
 one may run godoc as follows:
 
 godoc -http=:6060 -zip=go.zip -goroot=$HOME/go
+
+benefits in cloud and network security
+
+Key Benefits
+
+Address tradeoff between development cycle time and server performance
+
+Go was created to address exactly these concurrency needs for scaled applications, microservices, and cloud development. In fact, over 75 percent of projects in the Cloud Native Computing Foundation are written in Go.
+
+Go helps reduce the need to make this tradeoff, with its fast build times that enable iterative development, lower memory and CPU utilization. Servers built with Go experience instant start up times and are cheaper to run in pay-as-you-go and serverless deployments.
+
+Address challenges with the modern cloud, delivering standard idiomatic APIs
+
+Go addresses many challenges developers face with the modern cloud, delivering standard idiomatic APIs, and built in concurrency to take advantage of multicore processors. Go’s low-latency and “no knob” tuning make Go a great balance between performance and productivity - granting engineering teams the power to choose and the power to move.
+
+Use Case
+
+Use Go for Cloud Computing
+
+Go’s strengths shine when it comes to building services. Its speed and built-in support for concurrency results in fast and efficient services, while static typing, robust tooling, and emphasis on simplicity and readability help build reliable and maintainable code.
+
+Go has a strong ecosystem supporting service development. The standard library includes packages for common needs like HTTP servers and clients, JSON/XML parsing, SQL databases, and a range of security/encryption functionality, while the Go runtime includes tools for race detection, benchmarking/profiling, code generation, and static code analysis.
+
+The major Cloud providers (GCP, AWS, Azure) have Go APIs for their services, and popular open source libraries provide support for API tooling (Swagger), transport (protocol buffers, gRPC), monitoring (OpenCensus), Object-Relational Mapping (gORM), and authentication (JWT). The open source community has also provided several service frameworks, including Go Kit, Go Micro, and Gizmo, which can be a great way to get started quickly.
+

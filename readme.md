@@ -24,21 +24,9 @@ In C, we can divide a large program into the basic building blocks known as func
 
 In c, we can divide a large program into the basic building blocks known as function. The function contains the set of programming statements enclosed by {}. A function can be called multiple times to provide reusability and modularity to the C program. In other words, we can say that the collection of functions creates a program. The function is also known as procedureor subroutinein other programming languages.
 
-Advantage of functions in C
-There are the following advantages of C functions.
+ 
 
-By using functions, we can avoid rewriting same logic/code again and again in a program.
-We can call C functions any number of times in a program and from any place in a program.
-We can track a large C program easily when it is divided into multiple functions.
-Reusability is the main achievement of C functions.
-However, Function calling is always a overhead in a C program.
 
-Originally, C’s function declarations wrote the types of the arguments outside the parens, like this:
-
-int main(argc, argv)
-    int argc;
-    char *argv[];
-{ /* ... */ }
 Again, we see that main is a function because the expression main(argc, argv) returns an int. In modern notation we’d write
 
 int main(int argc, char *argv[]) { /* ... */ }
@@ -445,6 +433,48 @@ Scale and maintain larger applications with Go’s low memory footprint and doc 
 
 Go’s garbage collector means DevOps/SRE teams don’t have to worry about memory management. And Go’s automatic documentation generator (godoc) makes code self-documenting–lowering maintenance overhead and establishing best practices from the get-go.
 
+This tutorial introduces the basics of writing a RESTful web service API with Go and the Gin Web Framework (Gin).
+
+You’ll get the most out of this tutorial if you have a basic familiarity with Go and its tooling. If this is your first exposure to Go, please see Tutorial: Get started with Go for a quick introduction.
+
+Gin simplifies many coding tasks associated with building web applications, including web services. In this tutorial, you’ll use Gin to route requests, retrieve request details, and marshal JSON for responses.
+
+In this tutorial, you will build a RESTful API server with two endpoints. Your example project will be a repository of data about vintage jazz records.
+
+The tutorial includes the following sections:
+
+Design API endpoints.
+Create a folder for your code.
+Create the data.
+Write a handler to return all items.
+Write a handler to add a new item.
+Write a handler to return a specific item.
+Note: For other tutorials, see Tutorials.
+
+To try this as an interactive tutorial you complete in Google Cloud Shell, click the button below.
+
+Open in Cloud Shell
+
+Prerequisites
+An installation of Go 1.16 or later. For installation instructions, see Installing Go.
+A tool to edit your code. Any text editor you have will work fine.
+A command terminal. Go works well using any terminal on Linux and Mac, and on PowerShell or cmd in Windows.
+The curl tool. On Linux and Mac, this should already be installed. On Windows, it’s included on Windows 10 Insider build 17063 and later. For earlier Windows versions, you might need to install it. For more, see Tar and Curl Come to Windows.
+Design API endpoints
+You’ll build an API that provides access to a store selling vintage recordings on vinyl. So you’ll need to provide endpoints through which a client can get and add albums for users.
+
+When developing an API, you typically begin by designing the endpoints. Your API’s users will have more success if the endpoints are easy to understand.
+
+Here are the endpoints you’ll create in this tutorial.
+
+/albums
+
+GET – Get a list of all albums, returned as JSON.
+POST – Add a new album from request data sent as JSON.
+/albums/:id
+
+GET – Get an album by its ID, returning the album data as JSON.
+=======
 Creating a go module
 
 Tutorial: Create a Go module

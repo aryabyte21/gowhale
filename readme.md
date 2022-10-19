@@ -344,6 +344,28 @@ godoc -http=:6060 -zip=go.zip -goroot=$HOME/go
 
 
 
+
+Benefits of go in web development!
+
+Key Benefits
+
+Deploy across platforms in record speed
+
+For enterprises, Go is preferred for providing rapid cross-platform deployment. With its goroutines, native compilation, and the URI-based package namespacing, Go code compiles to a single, small binary—with zero dependencies—making it very fast.
+
+Leverage Go’s out-of-the-box performance to scale with ease
+
+Tigran Bayburtsyan, Co-Founder and CTO at Hexact Inc., summarizes five key reasons his company switched to Go:
+
+Compiles into a single binary — “Using static linking, Go actually combining all dependency libraries and modules into one single binary file based on OS type and architecture.”
+
+Static type system — “Type system is really important for large scale applications.”
+
+Performance — “Go performed better because of its concurrency model and CPU scalability. Whenever we need to process some internal request, we are doing it with separate Goroutines which are 10x cheaper in resources than Python Threads.”
+
+No need for a web framework — “In most of the cases you really don’t need any third-party library.”
+
+Great IDE support and debugging — “After rewriting all projects to Go, we got 64 percent less code than we had earlier.”
 First line of code in go (try it yourselve!)
 
 

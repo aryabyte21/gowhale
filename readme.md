@@ -357,4 +357,30 @@ Leverage fast compile times to build programs that start quickly and run on any 
 Developers of CLIs find Go to be ideal for designing their applications. Go compiles very quickly into a single binary, works across platforms with a consistent style, and brings a strong development community. From a single Windows or Mac laptop, developers can build a Go program for every one of the dozens of architectures and operating systems Go supports in a matter of seconds, no complicated build farms are needed. No other compiled language can be built as portably or quickly. Go applications are built into a single self contained binary making installing Go applications trivial.
 
 Specifically, programs written in Go run on any system without requiring any existing libraries, runtimes, or dependencies. And programs written in Go have an immediate startup time—similar to C or C++ but unobtainable with other programming languages.
+devops and site reliability engineer
+Overview
+
+Go helps enterprises automate and scale
+
+Development Operations (DevOps) teams help engineering organizations automate tasks and improve their continuous integration and continuous delivery and deployment (CI/CD) process. DevOps can topple developmental silos and implement tooling and automation to enhance software development, deployment, and support.
+
+Site Reliability Engineering (SRE) was born at Google to make the company’s “large-scale sites more reliable, efficient, and scalable,” writes Silvia Fressard, an independent DevOps consultant. “And the practices they developed responded so well to Google’s needs that other big tech companies, such as Amazon and Netflix, also adopted them.” SRE requires a mix of development and operations skills, and “empowers software developers to own the ongoing daily operation of their applications in production.”
+
+Go serves both siblings, DevOps and SRE, from its fast build times and lean syntax to its security and reliability support. Go’s concurrency and networking features also make it ideal for tools that manage cloud deployment—readily supporting automation while scaling for speed and code maintainability as development infrastructure grows over time.
+
+DevOps/SRE teams write software ranging from small scripts, to command-line interfaces (CLI), to complex automation and services, and Go’s feature set has benefits for every situation.
+
+Key Benefits
+
+Easily build small scripts with Go’s robust standard library and static typing
+
+Go’s fast build and startup times. Go’s extensive standard library—including packages for common needs like HTTP, file I/O, time, regular expressions, exec, and JSON/CSV formats—lets DevOps/SREs get right into their business logic. Plus, Go’s static type system and explicit error handling make even small scripts more robust.
+
+Quickly deploy CLIs with Go’s fast build times
+
+Every site reliability engineer has written “one-time use” scripts that turned into CLIs used by dozens of other engineers every day. And small deployment automation scripts turn into rollout management services. With Go, DevOps/SREs are in a great position to be successful when software scope inevitably creeps. Starting with Go puts you in a great position to be successful when that happens.
+
+Scale and maintain larger applications with Go’s low memory footprint and doc generator
+
+Go’s garbage collector means DevOps/SRE teams don’t have to worry about memory management. And Go’s automatic documentation generator (godoc) makes code self-documenting–lowering maintenance overhead and establishing best practices from the get-go.
 

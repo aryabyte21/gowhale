@@ -445,3 +445,24 @@ Scale and maintain larger applications with Go’s low memory footprint and doc 
 
 Go’s garbage collector means DevOps/SRE teams don’t have to worry about memory management. And Go’s automatic documentation generator (godoc) makes code self-documenting–lowering maintenance overhead and establishing best practices from the get-go.
 
+Getting started in generics!
+
+This tutorial introduces the basics of generics in Go. With generics, you can declare and use functions or types that are written to work with any of a set of types provided by calling code.
+
+In this tutorial, you’ll declare two simple non-generic functions, then capture the same logic in a single generic function.
+
+You’ll progress through the following sections:
+
+Create a folder for your code.
+Add non-generic functions.
+Add a generic function to handle multiple types.
+Remove type arguments when calling the generic function.
+Declare a type constraint.
+Note: For other tutorials, see Tutorials.
+
+Note: If you prefer, you can use the Go playground in “Go dev branch” mode to edit and run your program instead.
+
+Prerequisites
+An installation of Go 1.18 or later. For installation instructions, see Installing Go.
+A tool to edit your code. Any text editor you have will work fine.
+A command terminal. Go works well using any terminal on Linux and Mac, and on PowerShell or cmd in Windows.

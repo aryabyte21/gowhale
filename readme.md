@@ -24,21 +24,9 @@ In C, we can divide a large program into the basic building blocks known as func
 
 In c, we can divide a large program into the basic building blocks known as function. The function contains the set of programming statements enclosed by {}. A function can be called multiple times to provide reusability and modularity to the C program. In other words, we can say that the collection of functions creates a program. The function is also known as procedureor subroutinein other programming languages.
 
-Advantage of functions in C
-There are the following advantages of C functions.
+ 
 
-By using functions, we can avoid rewriting same logic/code again and again in a program.
-We can call C functions any number of times in a program and from any place in a program.
-We can track a large C program easily when it is divided into multiple functions.
-Reusability is the main achievement of C functions.
-However, Function calling is always a overhead in a C program.
 
-Originally, C’s function declarations wrote the types of the arguments outside the parens, like this:
-
-int main(argc, argv)
-    int argc;
-    char *argv[];
-{ /* ... */ }
 Again, we see that main is a function because the expression main(argc, argv) returns an int. In modern notation we’d write
 
 int main(int argc, char *argv[]) { /* ... */ }
@@ -263,7 +251,7 @@ f.Fuzz(func(t *testing.T, orig string) {
         t.Errorf("Reverse produced invalid UTF-8 string %q", rev)
     }
 })
-=======
+
 ## further general information
 Godoc extracts and generates documentation for Go programs.
 
@@ -450,6 +438,69 @@ how to do this!!
 
 Create a folder for your code
 To begin, create a project for the code you’ll write.
+This tutorial introduces the basics of writing a RESTful web service API with Go and the Gin Web Framework (Gin).
+
+You’ll get the most out of this tutorial if you have a basic familiarity with Go and its tooling. If this is your first exposure to Go, please see Tutorial: Get started with Go for a quick introduction.
+
+Gin simplifies many coding tasks associated with building web applications, including web services. In this tutorial, you’ll use Gin to route requests, retrieve request details, and marshal JSON for responses.
+
+In this tutorial, you will build a RESTful API server with two endpoints. Your example project will be a repository of data about vintage jazz records.
+
+The tutorial includes the following sections:
+
+Design API endpoints.
+Create a folder for your code.
+Create the data.
+Write a handler to return all items.
+Write a handler to add a new item.
+Write a handler to return a specific item.
+Note: For other tutorials, see Tutorials.
+
+To try this as an interactive tutorial you complete in Google Cloud Shell, click the button below.
+
+Open in Cloud Shell
+
+Prerequisites
+An installation of Go 1.16 or later. For installation instructions, see Installing Go.
+A tool to edit your code. Any text editor you have will work fine.
+A command terminal. Go works well using any terminal on Linux and Mac, and on PowerShell or cmd in Windows.
+The curl tool. On Linux and Mac, this should already be installed. On Windows, it’s included on Windows 10 Insider build 17063 and later. For earlier Windows versions, you might need to install it. For more, see Tar and Curl Come to Windows.
+Design API endpoints
+You’ll build an API that provides access to a store selling vintage recordings on vinyl. So you’ll need to provide endpoints through which a client can get and add albums for users.
+
+When developing an API, you typically begin by designing the endpoints. Your API’s users will have more success if the endpoints are easy to understand.
+
+Here are the endpoints you’ll create in this tutorial.
+
+/albums
+
+GET – Get a list of all albums, returned as JSON.
+POST – Add a new album from request data sent as JSON.
+/albums/:id
+
+GET – Get an album by its ID, returning the album data as JSON.
+
+Creating a go module
+
+Tutorial: Create a Go module
+Table of Contents
+Prerequisites
+Start a module that others can use
+This is the first part of a tutorial that introduces a few fundamental features of the Go language. If you're just getting started with Go, be sure to take a look at Tutorial: Get started with Go, which introduces the go command, Go modules, and very simple Go code.
+
+In this tutorial you'll create two modules. The first is a library which is intended to be imported by other libraries or applications. The second is a caller application which will use the first.
+
+This tutorial's sequence includes seven brief topics that each illustrate a different part of the language.
+
+Create a module -- Write a small module with functions you can call from another module.
+Call your code from another module -- Import and use your new module.
+Return and handle an error -- Add simple error handling.
+Return a random greeting -- Handle data in slices (Go's dynamically-sized arrays).
+Return greetings for multiple people -- Store key/value pairs in a map.
+Add a test -- Use Go's built-in unit testing features to test your code.
+Compile and install the application -- Compile and install your code locally.
+Create a folder for your code
+To begin, create a folder for the code you’ll write.
 
 Open a command prompt and change to your home directory.
 
@@ -481,6 +532,30 @@ Note that storing data in memory means that the set of albums will be lost each 
 Write the code
 Using your text editor, create a file called main.go in the web-service directory. You’ll write your Go code in this file.
 
+The rest of the tutorial will show a $ as the prompt. The commands you use will work on Windows too.
+
+From the command prompt, create a directory for your code called generics.
+
+$ mkdir generics
+$ cd generics
+Create a module to hold your code.
+
+Run the go mod init command, giving it your new code’s module path.
+
+$ go mod init example/generics
+go: creating new go.mod: module example/generics
+Note: For production code, you’d specify a module path that’s more specific to your own needs. For more, be sure to see Managing dependencies.
+
+Next, you’ll add some simple code to work with maps.
+
+Add non-generic functions
+In this step, you’ll add two functions that each add together the values of a map and return the total.
+
+You’re declaring two functions instead of one because you’re working with two different types of maps: one that stores int64 values, and one that stores float64 values.
+
+Write the code
+Using your text editor, create a file called main.go in the generics directory. You’ll write your Go code in this file.
+
 Into main.go, at the top of the file, paste the following package declaration.
 
 package main
@@ -506,3 +581,61 @@ var albums = []album{
     {ID: "3", Title: "Sarah Vaughan and Clifford Brown", Artist: "Sarah Vaughan", Price: 39.99},
 }
 Next, you’ll write code to implement your first endpoint.
+Beneath the package declaration, paste the following two function declarations.
+
+// SumInts adds together the values of m.
+func SumInts(m map[string]int64) int64 {
+    var s int64
+    for _, v := range m {
+        s += v
+    }
+    return s
+}
+
+// SumFloats adds together the values of m.
+func SumFloats(m map[string]float64) float64 {
+    var s float64
+    for _, v := range m {
+        s += v
+    }
+    return s
+}
+In this code, you:
+
+Declare two functions to add together the values of a map and return the sum.
+SumFloats takes a map of string to float64 values.
+SumInts takes a map of string to int64 values.
+At the top of main.go, beneath the package declaration, paste the following main function to initialize the two maps and use them as arguments when calling the functions you declared in the preceding step.
+
+func main() {
+    // Initialize a map for the integer values
+    ints := map[string]int64{
+        "first":  34,
+        "second": 12,
+    }
+
+    // Initialize a map for the float values
+    floats := map[string]float64{
+        "first":  35.98,
+        "second": 26.99,
+    }
+
+    fmt.Printf("Non-Generic Sums: %v and %v\n",
+        SumInts(ints),
+        SumFloats(floats))
+}
+In this code, you:
+
+Initialize a map of float64 values and a map of int64 values, each with two entries.
+Call the two functions you declared earlier to find the sum of each map’s values.
+Print the result.
+Near the top of main.go, just beneath the package declaration, import the package you’ll need to support the code you’ve just written.
+
+The first lines of code should look like this:
+
+package main
+
+import "fmt"
+Save main.go.
+
+Run the code

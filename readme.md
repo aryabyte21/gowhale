@@ -445,3 +445,22 @@ Scale and maintain larger applications with Go’s low memory footprint and doc 
 
 Go’s garbage collector means DevOps/SRE teams don’t have to worry about memory management. And Go’s automatic documentation generator (godoc) makes code self-documenting–lowering maintenance overhead and establishing best practices from the get-go.
 
+Creating a go module
+
+Tutorial: Create a Go module
+Table of Contents
+Prerequisites
+Start a module that others can use
+This is the first part of a tutorial that introduces a few fundamental features of the Go language. If you're just getting started with Go, be sure to take a look at Tutorial: Get started with Go, which introduces the go command, Go modules, and very simple Go code.
+
+In this tutorial you'll create two modules. The first is a library which is intended to be imported by other libraries or applications. The second is a caller application which will use the first.
+
+This tutorial's sequence includes seven brief topics that each illustrate a different part of the language.
+
+Create a module -- Write a small module with functions you can call from another module.
+Call your code from another module -- Import and use your new module.
+Return and handle an error -- Add simple error handling.
+Return a random greeting -- Handle data in slices (Go's dynamically-sized arrays).
+Return greetings for multiple people -- Store key/value pairs in a map.
+Add a test -- Use Go's built-in unit testing features to test your code.
+Compile and install the application -- Compile and install your code locally.

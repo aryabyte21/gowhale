@@ -445,3 +445,64 @@ Scale and maintain larger applications with Go’s low memory footprint and doc 
 
 Go’s garbage collector means DevOps/SRE teams don’t have to worry about memory management. And Go’s automatic documentation generator (godoc) makes code self-documenting–lowering maintenance overhead and establishing best practices from the get-go.
 
+how to do this!!
+
+
+Create a folder for your code
+To begin, create a project for the code you’ll write.
+
+Open a command prompt and change to your home directory.
+
+On Linux or Mac:
+
+$ cd
+On Windows:
+
+C:\> cd %HOMEPATH%
+Using the command prompt, create a directory for your code called web-service-gin.
+
+$ mkdir web-service-gin
+$ cd web-service-gin
+Create a module in which you can manage dependencies.
+
+Run the go mod init command, giving it the path of the module your code will be in.
+
+$ go mod init example/web-service-gin
+go: creating new go.mod: module example/web-service-gin
+This command creates a go.mod file in which dependencies you add will be listed for tracking. For more about naming a module with a module path, see Managing dependencies.
+
+Next, you’ll design data structures for handling data.
+
+Create the data
+To keep things simple for the tutorial, you’ll store data in memory. A more typical API would interact with a database.
+
+Note that storing data in memory means that the set of albums will be lost each time you stop the server, then recreated when you start it.
+
+Write the code
+Using your text editor, create a file called main.go in the web-service directory. You’ll write your Go code in this file.
+
+Into main.go, at the top of the file, paste the following package declaration.
+
+package main
+A standalone program (as opposed to a library) is always in package main.
+
+Beneath the package declaration, paste the following declaration of an album struct. You’ll use this to store album data in memory.
+
+Struct tags such as json:"artist" specify what a field’s name should be when the struct’s contents are serialized into JSON. Without them, the JSON would use the struct’s capitalized field names – a style not as common in JSON.
+
+// album represents data about a record album.
+type album struct {
+    ID     string  `json:"id"`
+    Title  string  `json:"title"`
+    Artist string  `json:"artist"`
+    Price  float64 `json:"price"`
+}
+Beneath the struct declaration you just added, paste the following slice of album structs containing data you’ll use to start.
+
+// albums slice to seed record album data.
+var albums = []album{
+    {ID: "1", Title: "Blue Train", Artist: "John Coltrane", Price: 56.99},
+    {ID: "2", Title: "Jeru", Artist: "Gerry Mulligan", Price: 17.99},
+    {ID: "3", Title: "Sarah Vaughan and Clifford Brown", Artist: "Sarah Vaughan", Price: 39.99},
+}
+Next, you’ll write code to implement your first endpoint.

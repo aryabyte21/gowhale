@@ -26,8 +26,8 @@ func main() {
     http.ListenAndServe(":5050", mux)
 	routes.Setup(app)
 	http.HandleFunc("/",googleDef)
-	app.Listen(":8000")
-	http.ListenAndServe(":8000", nil)
+	app.Listen(":3000")
+	http.ListenAndServe(":3000", nil)
 }
 
 func googleDef(w http.ResponseWriter, r *http.Request){

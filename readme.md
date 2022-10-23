@@ -548,7 +548,6 @@ To keep things simple for the tutorial, you’ll store data in memory. A more ty
 
 Note that storing data in memory means that the set of albums will be lost each time you stop the server, then recreated when you start it.
 
-Write the code
 Using your text editor, create a file called main.go in the web-service directory. You’ll write your Go code in this file.
 
 The rest of the tutorial will show a $ as the prompt. The commands you use will work on Windows too.

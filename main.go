@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"fmt"
 	"io"
-	"github.com/gofiber/fiber"
+  	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/middleware/cors"
 )
 

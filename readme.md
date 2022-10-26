@@ -8,6 +8,7 @@
 
 i am ritesh 
 - hello this is introduction to golang
+- this is intro to golang
 - hello arya accept my request
 C syntax
 golang is a efficient language

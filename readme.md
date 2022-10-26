@@ -4,16 +4,6 @@
 - hi hello
 - Hello this in intro
 
-Go is a statically typed, compiled programming language designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson. It is syntactically similar to C, but with memory safety, garbage collection, structural typing, and CSP-style
-- sdfgh
-
-i am ritesh 
-- hello this is introduction to golang
-- hello arya accept my request
-C syntax
-golang is a efficient language
-=======
-this is intro to go lang
 
 hello
 First, let’s talk about C syntax. C took an unusual and clever approach to declaration syntax. Instead of describing the types with special syntax, one writes an expression involving the item being declared, and states what type that expression will have. Thus
@@ -64,6 +54,7 @@ And look what happens to fp’s declaration if you don’t name the parameters:
 int (*fp)(int (*)(int, int), int)
 Not only is it not obvious where to put the name inside
 
+go is a good language
 int (*)(int, int)
 it’s not exactly clear that it’s a function pointer declaration at all. And what if the return type is a function pointer?
 

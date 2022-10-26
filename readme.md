@@ -1,6 +1,7 @@
 
 ## How to start with GoLang
 - Introduction
+- Hello this in intro
 C syntax
 First, let’s talk about C syntax. C took an unusual and clever approach to declaration syntax. Instead of describing the types with special syntax, one writes an expression involving the item being declared, and states what type that expression will have. Thus
 
@@ -236,7 +237,7 @@ Like before, there are several ways you could debug this failure. In this case, 
 we will log useful debugging info in the Reverse function.
 
 Look closely at the reversed string to spot the error. In Go, a string is a read only slice of bytes, and can contain bytes that aren’t valid UTF-8. The original string is a byte slice with one byte, '\x91'. When the input string is set to []rune, Go encodes the byte slice to UTF-8, and replaces the byte with the UTF-8 character �. When we compare the replacement UTF-8 character to the input byte slice, they are clearly not equal.
-
+The major Cloud providers (GCP, AWS, Azure) have Go APIs for their services, and popular open source libraries provide support for API tooling (Swagger), transport (protocol buffers, gRPC), monitoring (OpenCensus), Object-Relational Mapping (gORM), and authentication (JWT). The open source community has also provided several service frameworks, including Go Kit, Go Micro, and Gizmo, which can be a great way to get started quickly.
 f.Fuzz(func(t *testing.T, orig string) {
     rev := Reverse(orig)
     doubleRev := Reverse(rev)

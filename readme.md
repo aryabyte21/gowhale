@@ -64,6 +64,7 @@ And look what happens to fp’s declaration if you don’t name the parameters:
 int (*fp)(int (*)(int, int), int)
 Not only is it not obvious where to put the name inside
 
+go is a good language
 int (*)(int, int)
 it’s not exactly clear that it’s a function pointer declaration at all. And what if the return type is a function pointer?
 

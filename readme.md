@@ -5,6 +5,8 @@
 - sdfgh
 - hello this is introduction to golang
 C syntax
+golang is a efficient language
+=======
 this is intro to go lang
 
 First, let’s talk about C syntax. C took an unusual and clever approach to declaration syntax. Instead of describing the types with special syntax, one writes an expression involving the item being declared, and states what type that expression will have. Thus

@@ -3,17 +3,7 @@
 - Introduction
 - hi hello
 - Hello this in intro
-- qwertyuio
-- sdfgh
 
-i am ritesh 
-- hello this is introduction to golang
-- this is intro to golang
-- hello arya accept my request
-C syntax
-golang is a efficient language
-=======
-this is intro to go lang
 
 hello
 First, let’s talk about C syntax. C took an unusual and clever approach to declaration syntax. Instead of describing the types with special syntax, one writes an expression involving the item being declared, and states what type that expression will have. Thus

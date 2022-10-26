@@ -198,7 +198,7 @@ GODEBUG=http2client=0  # disable HTTP/2 client support
 GODEBUG=http2server=0  # disable HTTP/2 server support
 GODEBUG=http2debug=1   # enable verbose HTTP/2 debug logs
 GODEBUG=http2debug=2   # ... even more verbose, with frame dumps
-
+You can use the pkg.go.dev site to find published modules whose packages have functions you can use in your own code. Packages are published in modules -- like rsc.io/quote -- where others can use them. Modules are improved with new versions over time, and you can upgrade your code to use the improved versions.
 
 Add a fuzz test
 The unit test has limitations, namely that each input must be added to the test by the developer. One benefit of fuzzing is that it comes up with inputs for your code, and may identify edge cases that the test cases you came up with didn’t reach.

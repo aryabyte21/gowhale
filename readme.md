@@ -460,6 +460,18 @@ A command terminal. Go works well using any terminal on Linux and Mac, and on Po
 how to do this!!
 
 
+Developing and publishing modules
+You can collect related packages into modules, then publish the modules for other developers to use. This topic gives an overview of developing and publishing modules.
+
+To support developing, publishing, and using modules, you use:
+
+A workflow through which you develop and publish modules, revising them with new versions over time. See Workflow for developing and publishing modules.
+Design practices that help a module’s users understand it and upgrade to new versions in a stable way. See Design and development.
+A decentralized system for publishing modules and retrieving their code. You make your module available for other developers to use from your own repository and publish with a version number. See Decentralized publishing.
+A package search engine and documentation browser (pkg.go.dev) at which developers can find your module. See Package discovery.
+A module version numbering convention to communicate expectations of stability and backward compatibility to developers using your module. See Versioning.
+Go tools that make it easier for other developers to manage dependencies, including getting your module’s source, upgrading, and so on. See Managing dependencies.
+
 Create a folder for your code
 To begin, create a project for the code you’ll write.
 This tutorial introduces the basics of writing a RESTful web service API with Go and the Gin Web Framework (Gin).

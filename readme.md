@@ -315,6 +315,60 @@ When the -index flag is set, a search index is maintained. The index is created 
 
 The index contains both identifier and full text search information (searchable via regular expressions). The maximum number of full text search results shown can be set with the -maxresults flag; if set to 0, no full text results are shown, and only an identifier index but no full text search index is created.
 
+
+
+
+
+
+Using and understanding Go
+Effective Go
+A document that gives tips for writing clear, idiomatic Go code. A must read for any new Go programmer. It augments the tour and the language specification, both of which should be read first.
+
+Editor plugins and IDEs
+A document that summarizes commonly used editor plugins and IDEs with Go support.
+
+Diagnostics
+Summarizes tools and methodologies to diagnose problems in Go programs.
+
+A Guide to the Go Garbage Collector
+A document that describes how Go manages memory, and how to make the most of it.
+
+Managing dependencies
+When your code uses external packages, those packages (distributed as modules) become dependencies.
+
+Fuzzing
+Main documentation page for Go fuzzing.
+
+Accessing databases
+Tutorial: Accessing a relational database
+Introduces the basics of accessing a relational database using Go and the database/sql package in the standard library.
+
+Accessing relational databases
+An overview of Go's data access features.
+
+Opening a database handle
+You use the Go database handle to execute database operations. Once you open a handle with database connection properties, the handle represents a connection pool it manages on your behalf.
+
+Executing SQL statements that don't return data
+For SQL operations that might change the database, including SQL INSERT, UPDATE, and DELETE, you use Exec methods.
+
+Querying for data
+For SELECT statements that return data from a query, using the Query or QueryRow method.
+
+Using prepared statements
+Defining a prepared statement for repeated use can help your code run a bit faster by avoiding the overhead of re-creating the statement each time your code performs the database operation.
+
+Executing transactions
+sql.Tx exports methods representing transaction-specific semantics, including Commit and Rollback, as well as methods you use to perform common database operations.
+
+Canceling in-progress database operations
+Using context.Context, you can have your application's function calls and services stop working early and return an error when their processing is no longer needed.
+
+Managing connections
+For some advanced programs, you might need to tune connection pool parameters or work with connections explicitly.
+
+Avoiding SQL injection risk
+You can avoid an SQL injection risk by providing SQL parameter values as sql package function arguments
 By default, godoc uses the system's GOOS/GOARCH. You can provide the URL parameters "GOOS" and "GOARCH" to set the output on the web page for the target system.
 
 The presentation mode of web pages served by godoc can be controlled with the "m" URL parameter; it accepts a comma-separated list of flag names as value:

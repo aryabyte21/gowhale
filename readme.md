@@ -224,6 +224,27 @@ func FuzzReverse(f *testing.F) {
         }
     })
 }
+
+
+Developing modules
+Developing and publishing modules
+You can collect related packages into modules, then publish the modules for other developers to use. This topic gives an overview of developing and publishing modules.
+
+Module release and versioning workflow
+When you develop modules for use by other developers, you can follow a workflow that helps ensure a reliable, consistent experience for developers using the module. This topic describes the high-level steps in that workflow.
+
+Managing module source
+When you're developing modules to publish for others to use, you can help ensure that your modules are easier for other developers to use by following the repository conventions described in this topic.
+
+Developing a major version update
+A major version update can be very disruptive to your module's users because it includes breaking changes and represents a new module. Learn more in this topic.
+
+Publishing a module
+When you want to make a module available for other developers, you publish it so that it's visible to Go tools. Once you've published the module, developers importing its packages will be able to resolve a dependency on the module by running commands such as go get.
+
+Module version numbering
+A module's developer uses each part of a module's version number to signal the version’s stability and backward compatibility. For each new release, a module's release version number specifically reflects the nature of the module's changes since the preceding release.
+
 Fuzzing has a few limitations as well. In your unit test, you could predict the expected output of the Reverse function, and verify that the actual output met those expectations.
 There are a few different ways you could debug this error. If you are using VS Code as your text editor, you can set up your debugger to investigate.
 

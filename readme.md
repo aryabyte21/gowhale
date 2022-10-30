@@ -8,7 +8,21 @@ Go is a procedural programming language. It was developed in 2007 by Robert Grie
 
 text editors for go
 Text Editor: Text editor gives you a platform where you write your source code. Following are the list of text editors:  
+Advantages and Disadvantages of Go Language
 
+Advantages:  
+
+Flexible- It is concise, simple and easy to read.
+Concurrency- It allows multiple process running simultaneously and effectively.
+Quick Outcome- Its compilation time is very fast.
+Library- It provides a rich standard library.
+Garbage collection- It is a key feature of go. Go excels in giving a lot of control over memory allocation and has dramatically reduced latency in the most recent versions of the garbage collector.
+It validates for the interface and type embedding.
+Disadvantages:  
+
+It has no support for generics, even if there are many discussions about it.
+The packages distributed with this programming language is quite useful but Go is not so object-oriented in the conventional sense.
+There is absence of some libraries especially a UI tool kit.
 Windows notepad
 OS Edit command
 Brief

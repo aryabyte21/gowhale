@@ -663,19 +663,3 @@ $ go mod init example/generics
 go: creating new go.mod: module example/generics
 Note: For production code, you’d specify a module path that’s more specific to your own needs. For more, be sure to see Managing dependencies.
 
-Next, you’ll add some simple code to work with maps.
-
-Add non-generic functions
-In this step, you’ll add two functions that each add together the values of a map and return the total.
-
-You’re declaring two functions instead of one because you’re working with two different types of maps: one that stores int64 values, and one that stores float64 values.
-
-Write the code
-Using your text editor, create a file called main.go in the generics directory. You’ll write your Go code in this file.
-
-Into main.go, at the top of the file, paste the following package declaration.
-
-package main
-A standalone program (as opposed to a library) is always in package main.
-
-Beneath the package declaration, paste the following declaration of an album struct. You’ll use this to store album data in memory.

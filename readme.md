@@ -1,7 +1,10 @@
 
 ## How to start with GoLang
 - Introduction
+- hi hello
+- Hello this in intro
 
+Go is a procedural programming language. It was developed in 2007 by Robert Griesemer, Rob Pike, and Ken Thompson at Google but launched in 2009 as an open-source programming language. Programs are assembled by using packages, for efficient management of dependencies. This language also supports environment adopting patterns alike to dynamic languages. For eg., type inference (y := 0 is a valid declaration of a variable y of type float).
 
 text editors for go
 Text Editor: Text editor gives you a platform where you write your source code. Following are the list of text editors:  
@@ -17,6 +20,7 @@ Finding a Go Compiler: Go distribution comes as a binary installable for FreeBSD
 
  Beginning with Go programming
 
+There are various online IDEs such as The Go Playground, repl.it, etc. which can be used to run Go programs without installing. 
 hello
 First, let’s talk about C syntax. C took an unusual and clever approach to declaration syntax. Instead of describing the types with special syntax, one writes an expression involving the item being declared, and states what type that expression will have. Thus
 
@@ -29,7 +33,36 @@ The pointer in C language is a variable which stores the address of another vari
 int *p;
 int a[3];
 In C, we can divide a large program into the basic building blocks known as function. The function contains the set of programming statements enclosed by {}. A function can be called multiple times to provide reusability and modularity to the C program. In other words, we can say that the collection of functions creates a program. The function is also known as procedureor subroutinein other programming languages.
+Following is another example:  
 
+
+package main
+import "fmt"
+ 
+func main() {
+   fmt.Println("1 + 1 =", 1 + 1)
+}
+Output:  
+
+1 + 1 = 2
+Explanation of the above program: 
+In this above program, the same package line, the same import line, the same function declaration and uses the same Println function as we have used in 1st GO program. This time instead of printing the string “Hello, geeksforgeeks” we print the string 1 + 1 = followed by the result of the expression 1 + 1. This expression is made up of three parts: the numeric literal 1 (which is of type int), the + operator (which represents addition) and another numeric literal 1. 
+
+Why this “Go language”?
+
+Because Go language is an effort to combine the ease of programming of an interpreted, dynamically typed language with the efficiency and safety of a statically typed, compiled language. It also aims to be modern, with support for networked and multicore computing. 
+
+What excluding in Go which is present in other languages? 
+
+Go attempts to reduce the amount of typing in both senses of the word. Throughout its design, developers tried to reduce clutter and complexity.
+There are no forward declarations and no header files; everything is declared exactly once.
+Stuttering is reduced by simple type derivation using the := declare-and-initialize construct.
+There is no type hierarchy: types just are, they don’t have to announce their relationships.
+Hardware Limitations
+
+We have observed that in a decade, the hardware and processing configuration is changing at a very slow rate. In 2004, P4 was having the clock speed of 3.0 GHz and now in 2018, Macbook pro has the clock speed of Approx (2.3Ghz v 2.66Ghz). To speed up, the functionality we use more processors, but using more processor the cost also increases. And due to this we use limited processors and using limited processor we have a heavy programming language whose threading takes more memory and slows down the performance of our system. Hence, to overcome such problem Golang has been designed in such a way that instead of using threading it uses Goroutine, which is similar to threading but consumes very less memory. 
+Like threading consumes 1MB whereas Goroutine consumes 2KB of memory, hence at the same time, we can have millions of goroutine triggered. 
+So the above-discussed point makes golang a strong language that handles concurrency like C++ and Java. 
 State that p is a pointer to int because ‘*p’ has type int, and that a is an array of ints because a[3] (ignoring the particular index value, which is punned to be the size of the array) has type int.
 
 What about functions?
@@ -37,13 +70,7 @@ In C, we can divide a large program into the basic building blocks known as func
 
 In c, we can divide a large program into the basic building blocks known as function. The function contains the set of programming statements enclosed by {}. A function can be called multiple times to provide reusability and modularity to the C program. In other words, we can say that the collection of functions creates a program. The function is also known as procedureor subroutinein other programming languages.
 
- Explanation of the syntax of Go program: 
-
-Line 1: It contains the package main of the program, which have overall content of the program.It is the initial point to run the program, So it is compulsory to write.
-Line 2: It contains import “fmt”, it is a preprocessor command which tells the compiler to include the files lying in the package.
-Line 3: main function, it is beginning of execution of program.
-Line 4: fmt.Println() is a standard library function to print something as a output on screen.In this, fmt package has transmitted Println method which is used to display the output.
-Comment: Comments are used for explaining code and are used in similar manner as in Java or C or C++. Compilers ignore the comment entries and does not execute them. Comments can be of single line or multiple lines.
+ 
 
 
 Again, we see that main is a function because the expression main(argc, argv) returns an int. In modern notation we’d write

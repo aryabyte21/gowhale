@@ -3,7 +3,17 @@
 - Introduction
 
 
+text editors for go
+Text Editor: Text editor gives you a platform where you write your source code. Following are the list of text editors:  
 
+Windows notepad
+OS Edit command
+Brief
+Epsilon
+vm or vi
+Emacs
+VS Code
+Finding a Go Compiler: Go distribution comes as a binary installable for FreeBSD (release 8 and above), Linux, Mac OS X (Snow Leopard and above), and Windows operating systems with 32-bit (386) and 64-bit (amd64) x86 processor architectures. 
 hello
 First, let’s talk about C syntax. C took an unusual and clever approach to declaration syntax. Instead of describing the types with special syntax, one writes an expression involving the item being declared, and states what type that expression will have. Thus
 

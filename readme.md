@@ -6,6 +6,18 @@
 
 Go is a procedural programming language. It was developed in 2007 by Robert Griesemer, Rob Pike, and Ken Thompson at Google but launched in 2009 as an open-source programming language. Programs are assembled by using packages, for efficient management of dependencies. This language also supports environment adopting patterns alike to dynamic languages. For eg., type inference (y := 0 is a valid declaration of a variable y of type float).
 
+text editors for go
+Text Editor: Text editor gives you a platform where you write your source code. Following are the list of text editors:  
+
+Windows notepad
+OS Edit command
+Brief
+Epsilon
+vm or vi
+Emacs
+VS Code
+Finding a Go Compiler: Go distribution comes as a binary installable for FreeBSD (release 8 and above), Linux, Mac OS X (Snow Leopard and above), and Windows operating systems with 32-bit (386) and 64-bit (amd64) x86 processor architectures. 
+
  Beginning with Go programming
 
 There are various online IDEs such as The Go Playground, repl.it, etc. which can be used to run Go programs without installing. 

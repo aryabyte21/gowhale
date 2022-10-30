@@ -90,8 +90,7 @@ Drop the parameter names and it’s just as clear - they’re always first so th
 func main(int, []string) int
 One merit of this left-to-right style is how well it works as the types become more complex. Here’s a declaration of a function variable (analogous to a function pointer in C):
 
-f func(func(int,int) int, int) int
-Or if f returns a function:
+
 
 f func(func(int,int) int, int) func(int, int) int
 It still reads clearly, from left to right, and it’s always obvious which name is being declared - the name comes first.

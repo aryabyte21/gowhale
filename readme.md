@@ -656,7 +656,4 @@ Create a module to hold your code.
 
 Run the go mod init command, giving it your new code’s module path.
 
-$ go mod init example/generics
-go: creating new go.mod: module example/generics
-Note: For production code, you’d specify a module path that’s more specific to your own needs. For more, be sure to see Managing dependencies.
 

@@ -616,7 +616,6 @@ Compile and install the application -- Compile and install your code locally.
 Create a folder for your code
 To begin, create a folder for the code you’ll write.
 
-Open a command prompt and change to your home directory.
 
 On Linux or Mac:
 

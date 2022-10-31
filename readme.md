@@ -384,7 +384,20 @@ When the -index flag is set, a search index is maintained. The index is created 
 The index contains both identifier and full text search information (searchable via regular expressions). The maximum number of full text search results shown can be set with the -maxresults flag; if set to 0, no full text results are shown, and only an identifier index but no full text search index is created.
 
 
+Disadvantages:  
 
+It has no support for generics, even if there are many discussions about it.
+The packages distributed with this programming language is quite useful but Go is not so object-oriented in the conventional sense.
+There is absence of some libraries especially a UI tool kit.
+Some popular Applications developed in Go Language
+
+Docker: a set of tools for deploying linux containers
+Openshift: a cloud computing platform as a service by Red Hat.
+Kubernetes: The future of seamlessly automated deployment processes
+Dropbox: migrated some of their critical components from Python to Go.
+Netflix: for two part of their server architecture.
+InfluxDB: is an open-source time series database developed by InfluxData.
+Golang: The language itself was written in Go.
 
 
 

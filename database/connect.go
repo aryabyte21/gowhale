@@ -5,7 +5,7 @@ import (
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
-
+//This is the database
 var DB *gorm.DB
 
 func Connect() {

@@ -514,6 +514,15 @@ func main() {
 	fmt.Println("Hello, 世界")
 }
 
+Go was named Programming Language of the Year by the TIOBE Programming Community Index in its first year, 2009, for having a larger 12-month increase in popularity (in only 2 months after its introduction in November) than any other language that year, and reached 13th place by January 2010, surpassing established languages like Pascal. By June 2015, its ranking had dropped to below 50th in the index, placing it lower than COBOL and Fortran.But as of January 2017, its ranking had surged to 13th, indicating significant growth in popularity and adoption. Go was awarded TIOBE programming language of the year 2016.
+Advantages:  
+
+Flexible- It is concise, simple and easy to read.
+Concurrency- It allows multiple process running simultaneously and effectively.
+Quick Outcome- Its compilation time is very fast.
+Library- It provides a rich standard library.
+Garbage collection- It is a key feature of go. Go excels in giving a lot of control over memory allocation and has dramatically reduced latency in the most recent versions of the garbage collector.
+It validates for the interface and type embedding
 this programme will print Hello
 congrats! you have written your first Go programme
 command line interface

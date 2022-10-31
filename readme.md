@@ -711,3 +711,7 @@ Watch "Getting started with VS Code Go" for an explanation of how to build your 
 
 This article describes only a subset of the features the Go extension provides. See the extension's documentation for the full, up-to-date list of supported features.
 For more info visit :- https://code.visualstudio.com/docs/languages/go
+
+The Go programming language is an open source project to make programmers more productive.
+
+Go is expressive, concise, clean, and efficient. Its concurrency mechanisms make it easy to write programs that get the most out of multicore and networked

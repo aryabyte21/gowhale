@@ -449,7 +449,7 @@ Golang: The language itself was written in Go.
 Using and understanding Go
 Effective Go
 A document that gives tips for writing clear, idiomatic Go code. A must read for any new Go programmer. It augments the tour and the language specification, both of which should be read first.
-
+Ok sir
 Editor plugins and IDEs
 A document that summarizes commonly used editor plugins and IDEs with Go support.
 

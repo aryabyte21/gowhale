@@ -795,6 +795,8 @@ Some features unique to Go are:
 
 Local & remote debugging
 Data inspection using Delve's expression syntax
+Dynamic configuration change and inspection options with dlv command from DEBUG CONSOLE
+Ability to hide/show system goroutines (use hideSystemGoroutines configuration)
 
 For more info visit :- https://code.visualstudio.com/docs/languages/go
 

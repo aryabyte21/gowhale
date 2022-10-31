@@ -715,6 +715,11 @@ The Go language server (gopls) detects build and vet errors found on the workspa
 
 You can add additional lint checks using the go.lintOnSave setting and configuring your choice of linting tool (staticcheck, golangci-lint, or revive) using the go.lintTool setting.
 
+Import package :-
+The extension organizes imports, and removes unused imports by default. For different behavior, you can override per-language default settings following these instructions.
+
+Run the command Go: Add Import to get a list of packages that can be imported to your Go file. Choose one and it will get added in the import block of your Go file.
+
 For more info visit :- https://code.visualstudio.com/docs/languages/go
 
 The Go programming language is an open source project to make programmers more productive.

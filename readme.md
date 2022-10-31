@@ -243,6 +243,19 @@ s := &http.Server{
 	WriteTimeout:   10 * time.Second,
 	MaxHeaderBytes: 1 << 20,
 }
+Postfix increment
+let x = 3;
+const y = x++;
+
+// x = 4
+// y = 3
+Copy to Clipboard
+Prefix increment
+let x = 3;
+const y = ++x;
+
+// x = 4
+// y = 4
 log.Fatal(s.ListenAndServe())
 Starting with Go 1.6, the http package has transparent support for the HTTP/2 protocol when using HTTPS. Programs that must disable HTTP/2 can do so by setting Transport.TLSNextProto (for clients) or Server.TLSNextProto (for servers) to a non-nil, empty map. Alternatively, the following GODEBUG environment variables are currently supported:
 

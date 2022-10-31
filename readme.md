@@ -3,7 +3,7 @@
 - Introduction
 - hi hello
 - Hello this in intro
-
+-Information About Go Lang:-
 Go is a procedural programming language. It was developed in 2007 by Robert Griesemer, Rob Pike, and Ken Thompson at Google but launched in 2009 as an open-source programming language. Programs are assembled by using packages, for efficient management of dependencies. This language also supports environment adopting patterns alike to dynamic languages. For eg., type inference (y := 0 is a valid declaration of a variable y of type float).
 
 text editors for go
@@ -789,6 +789,11 @@ Run the command Go: Add Import to get a list of packages that can be imported to
 
 Debugg:-
 The Go extension lets you debug Go code by utilizing the Delve debugger.
+
+Some features unique to Go are:
+
+Local & remote debugging
+Data inspection using Delve's expression syntax
 
 For more info visit :- https://code.visualstudio.com/docs/languages/go
 

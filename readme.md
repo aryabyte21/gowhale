@@ -723,6 +723,11 @@ Run the command Go: Add Import to get a list of packages that can be imported to
 Debugg:-
 The Go extension lets you debug Go code by utilizing the Delve debugger.
 
+Some features unique to Go are:
+
+Local & remote debugging
+Data inspection using Delve's expression syntax
+
 For more info visit :- https://code.visualstudio.com/docs/languages/go
 
 The Go programming language is an open source project to make programmers more productive.

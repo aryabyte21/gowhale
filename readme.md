@@ -703,3 +703,11 @@ Create a module to hold your code.
 Run the go mod init command, giving it your new code’s module path.
 
 
+Using Go in VS Code:-
+Using the Go extension for Visual Studio Code, you get features like IntelliSense, code navigation, symbol search, testing, debugging, and many more that will help you in Go development.
+You can install the Go extension from the VS Code Marketplace.
+
+Watch "Getting started with VS Code Go" for an explanation of how to build your first Go application using VS Code Go.
+
+This article describes only a subset of the features the Go extension provides. See the extension's documentation for the full, up-to-date list of supported features.
+For more info visit :- https://code.visualstudio.com/docs/languages/go

@@ -288,7 +288,9 @@ A major version update can be very disruptive to your module's users because it 
 
 Publishing a module
 When you want to make a module available for other developers, you publish it so that it's visible to Go tools. Once you've published the module, developers importing its packages will be able to resolve a dependency on the module by running commands such as go get.
+If used postfix, with operator after operand (for example, x++), the increment operator increments and returns the value before incrementing.
 
+If used prefix, with operator before operand (for example, ++x), the increment operator increments and returns the value after incrementing.
 Module version numbering
 A module's developer uses each part of a module's version number to signal the version’s stability and backward compatibility. For each new release, a module's release version number specifically reflects the nature of the module's changes since the preceding release.
 

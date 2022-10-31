@@ -777,4 +777,23 @@ You can install the Go extension from the VS Code Marketplace.
 Watch "Getting started with VS Code Go" for an explanation of how to build your first Go application using VS Code Go.
 
 This article describes only a subset of the features the Go extension provides. See the extension's documentation for the full, up-to-date list of supported features.
+
+The Go language server (gopls) detects build and vet errors found on the workspace. The errors and warnings from running any/all of the above will be shown red/green squiggly lines in the editor. These diagnostics also show up in the Problems panel (View > Problems).
+
+You can add additional lint checks using the go.lintOnSave setting and configuring your choice of linting tool (staticcheck, golangci-lint, or revive) using the go.lintTool setting.
+
+Import package :-
+The extension organizes imports, and removes unused imports by default. For different behavior, you can override per-language default settings following these instructions.
+
+Run the command Go: Add Import to get a list of packages that can be imported to your Go file. Choose one and it will get added in the import block of your Go file.
+
+Debugg:-
+The Go extension lets you debug Go code by utilizing the Delve debugger.
+
 For more info visit :- https://code.visualstudio.com/docs/languages/go
+
+The Go programming language is an open source project to make programmers more productive.
+
+Go is expressive, concise, clean, and efficient. Its concurrency mechanisms make it easy to write programs that get the most out of multicore and networked
+
+For more Info visit go language documentation:- https://go.dev/doc/

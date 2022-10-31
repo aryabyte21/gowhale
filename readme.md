@@ -710,6 +710,11 @@ You can install the Go extension from the VS Code Marketplace.
 Watch "Getting started with VS Code Go" for an explanation of how to build your first Go application using VS Code Go.
 
 This article describes only a subset of the features the Go extension provides. See the extension's documentation for the full, up-to-date list of supported features.
+
+The Go language server (gopls) detects build and vet errors found on the workspace. The errors and warnings from running any/all of the above will be shown red/green squiggly lines in the editor. These diagnostics also show up in the Problems panel (View > Problems).
+
+You can add additional lint checks using the go.lintOnSave setting and configuring your choice of linting tool (staticcheck, golangci-lint, or revive) using the go.lintTool setting.
+
 For more info visit :- https://code.visualstudio.com/docs/languages/go
 
 The Go programming language is an open source project to make programmers more productive.

@@ -253,7 +253,10 @@ Copy to Clipboard
 Prefix increment
 let x = 3;
 const y = ++x;
-
+Static data structure: Static data structure has a fixed memory size. It is easier to access the elements in a static data structure. 
+An example of this data structure is an array.
+Dynamic data structure: In dynamic data structure, the size is not fixed. It can be randomly updated during the runtime which may be considered efficient concerning the memory (space) complexity of the code. 
+Examples of this data structure are queue, stack, etc.
 // x = 4
 // y = 4
 log.Fatal(s.ListenAndServe())

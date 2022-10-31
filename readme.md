@@ -257,6 +257,22 @@ s := &http.Server{
 	WriteTimeout:   10 * time.Second,
 	MaxHeaderBytes: 1 << 20,
 }
+Postfix increment
+let x = 3;
+const y = x++;
+OKAY
+// x = 4
+// y = 3
+Copy to Clipboard
+Prefix increment
+let x = 3;
+const y = ++x;
+Static data structure: Static data structure has a fixed memory size. It is easier to access the elements in a static data structure. 
+An example of this data structure is an array.
+Dynamic data structure: In dynamic data structure, the size is not fixed. It can be randomly updated during the runtime which may be considered efficient concerning the memory (space) complexity of the code. 
+Examples of this data structure are queue, stack, etc.
+// x = 4
+// y = 4
 log.Fatal(s.ListenAndServe())
 Starting with Go 1.6, the http package has transparent support for the HTTP/2 protocol when using HTTPS. Programs that must disable HTTP/2 can do so by setting Transport.TLSNextProto (for clients) or Server.TLSNextProto (for servers) to a non-nil, empty map. Alternatively, the following GODEBUG environment variables are currently supported:
 
@@ -302,7 +318,9 @@ A major version update can be very disruptive to your module's users because it 
 
 Publishing a module
 When you want to make a module available for other developers, you publish it so that it's visible to Go tools. Once you've published the module, developers importing its packages will be able to resolve a dependency on the module by running commands such as go get.
+If used postfix, with operator after operand (for example, x++), the increment operator increments and returns the value before incrementing.
 
+If used prefix, with operator before operand (for example, ++x), the increment operator increments and returns the value after incrementing.
 Module version numbering
 A module's developer uses each part of a module's version number to signal the version’s stability and backward compatibility. For each new release, a module's release version number specifically reflects the nature of the module's changes since the preceding release.
 
@@ -321,6 +339,19 @@ To examine why the input (in this case, the Chinese character 泃) is causing Re
 Like before, there are several ways you could debug this failure. In this case, using a debugger would be a great approach.
 
 we will log useful debugging info in the Reverse function.
+
+Following is another example:  
+
+
+package main
+import "fmt"
+ 
+func main() {
+   fmt.Println("1 + 1 =", 1 + 1)
+}
+Output:  
+
+1 + 1 = 2
 
 Look closely at the reversed string to spot the error. In Go, a string is a read only slice of bytes, and can contain bytes that aren’t valid UTF-8. The original string is a byte slice with one byte, '\x91'. When the input string is set to []rune, Go encodes the byte slice to UTF-8, and replaces the byte with the UTF-8 character �. When we compare the replacement UTF-8 character to the input byte slice, they are clearly not equal.
 The major Cloud providers (GCP, AWS, Azure) have Go APIs for their services, and popular open source libraries provide support for API tooling (Swagger), transport (protocol buffers, gRPC), monitoring (OpenCensus), Object-Relational Mapping (gORM), and authentication (JWT). The open source community has also provided several service frameworks, including Go Kit, Go Micro, and Gizmo, which can be a great way to get started quickly.
@@ -398,7 +429,20 @@ When the -index flag is set, a search index is maintained. The index is created 
 The index contains both identifier and full text search information (searchable via regular expressions). The maximum number of full text search results shown can be set with the -maxresults flag; if set to 0, no full text results are shown, and only an identifier index but no full text search index is created.
 
 
+Disadvantages:  
 
+It has no support for generics, even if there are many discussions about it.
+The packages distributed with this programming language is quite useful but Go is not so object-oriented in the conventional sense.
+There is absence of some libraries especially a UI tool kit.
+Some popular Applications developed in Go Language
+
+Docker: a set of tools for deploying linux containers
+Openshift: a cloud computing platform as a service by Red Hat.
+Kubernetes: The future of seamlessly automated deployment processes
+Dropbox: migrated some of their critical components from Python to Go.
+Netflix: for two part of their server architecture.
+InfluxDB: is an open-source time series database developed by InfluxData.
+Golang: The language itself was written in Go.
 
 
 
@@ -724,7 +768,7 @@ $ cd generics
 Create a module to hold your code.
 
 Run the go mod init command, giving it your new code’s module path.
-
+Go language is just like Java language as it support platform independency. Due to its modular design and modularity i.e., the code is compiled and is converted into binary form which is as small as possible and hence, it requires no dependency. Its code can be compiled in any platform or any server and application you work on.
 
 Using Go in VS Code:-
 Using the Go extension for Visual Studio Code, you get features like IntelliSense, code navigation, symbol search, testing, debugging, and many more that will help you in Go development.

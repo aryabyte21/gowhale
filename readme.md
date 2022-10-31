@@ -720,6 +720,9 @@ The extension organizes imports, and removes unused imports by default. For diff
 
 Run the command Go: Add Import to get a list of packages that can be imported to your Go file. Choose one and it will get added in the import block of your Go file.
 
+Debugg:-
+The Go extension lets you debug Go code by utilizing the Delve debugger.
+
 For more info visit :- https://code.visualstudio.com/docs/languages/go
 
 The Go programming language is an open source project to make programmers more productive.

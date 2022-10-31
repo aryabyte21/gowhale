@@ -352,6 +352,7 @@ f.Fuzz(func(t *testing.T, orig string) {
         t.Errorf("Reverse produced invalid UTF-8 string %q", rev)
     }
 })
+arya bhai namaste
 Notice that your code calls the Go function, printing a clever message about communication.
 ## further general information
 Godoc extracts and generates documentation for Go programs.
